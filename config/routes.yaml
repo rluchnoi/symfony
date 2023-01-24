@@ -1,3 +1,9 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
+
+login:
+    path: /api/login
+    methods: ['POST']
+    defaults:
+        _format: json

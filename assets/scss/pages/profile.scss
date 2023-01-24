@@ -1,0 +1,37 @@
+.profile {
+  background-color: whitesmoke;
+  margin: 100px;
+  display: flex;
+
+  .profile-info, .profile-actions {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .profile-info {
+    width: 400px;
+    border-right: 3px solid white;
+
+    img {
+      height: 100px;
+      width: 100px;
+      border: 1px solid lightgray;
+    }
+  }
+
+  .profile-actions {
+    button {
+      border: 1px solid lightgray;
+      outline: none;
+      padding: 10px;
+      width: 200px;
+      font-weight: bold;
+
+      &:active {
+        background-color: lightgray;
+      }
+    }
+  }
+}

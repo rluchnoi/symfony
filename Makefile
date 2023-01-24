@@ -1,7 +1,7 @@
 DC := docker-compose
 FPM := $(DC) exec fpm
 NODE := $(DC) exec node
-ARTISAN := $(FPM) php artisan
+SYMFONY := $(FPM) symfony console
 
 env:
 	cp .env.example .env
@@ -34,24 +34,16 @@ yarn-install:
 	@$(NODE) yarn install
 
 yarn-watch:
-	@$(NODE) yarn run watch
+	@$(NODE) yarn encore dev --watch
 
-queue-listen:
-	@$(ARTISAN) queue:listen --timeout=2000
+# keygen:
+# 	@$(ARTISAN) key:generate
+#
+# migrate:
+# 	@$(ARTISAN) migrate
 
-queue-retry:
-	@$(ARTISAN) queue:retry all
-
-keygen:
-	@$(ARTISAN) key:generate
-
-migrate:
-	@$(ARTISAN) migrate
-
-seed:
-	@$(ARTISAN) db:seed
-
-start-expanded: start migrate seed
+fixtures:
+	@$(SYMFONY) doctrine:fixtures:load
 
 refresh: composer-install yarn-install migrate seed
 

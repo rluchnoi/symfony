@@ -14,6 +14,8 @@ RUN apt-get update \
   && docker-php-ext-install -j$(nproc) gd \
   && docker-php-ext-configure gd
 
+RUN curl -sS https://get.symfony.com/cli/installer | bash && mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
+
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
 

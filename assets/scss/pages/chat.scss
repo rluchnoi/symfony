@@ -1,0 +1,176 @@
+.chatBackground {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .chat {
+    display: flex;
+    border: 4px solid lightgray;
+    border-radius: 10px;
+    width: 95%;
+    height: 80%;
+    overflow: hidden;
+
+    .messages {
+      background-color: darkgray;
+      padding: 10px;
+      height: calc(100% - 100px);
+      overflow-y: scroll;
+
+      .message {
+        padding: 10px;
+        display: flex;
+        gap: 20px;
+
+        .messageInfo {
+          background-color: whitesmoke;
+          display: flex;
+          flex-direction: column;
+          padding: 10px;
+          border-radius: 0 10px 10px 10px;
+          max-width: 300px;
+
+          .messageInfoText {
+            display: flex;
+            flex-direction: column;
+
+            .messageAuthor {
+              font-weight: bold;
+            }
+          }
+
+          .messageTime {
+            min-width: 80px;
+            font-size: small;
+            color: grey;
+            text-align: right;
+          }
+        }
+
+        .yourMessageInfo {
+          border-radius: 10px 0 10px 10px;
+        }
+      }
+
+      .yourMessage {
+        justify-content: right;
+      }
+    }
+
+    .messageInput {
+      background-color: whitesmoke;
+      padding: 10px;
+      height: 50px;
+
+      display: flex;
+      justify-content: space-between;
+
+      input {
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: large;
+        background-color: transparent;
+      }
+
+      .sendMessage {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+      }
+    }
+
+    .chatList {
+      flex: 2;
+      background-color: gray;
+
+      .chatListInfo {
+        background-color: gray;
+        display: flex;
+        align-items: center;
+        height: 50px;
+        padding: 10px;
+        font-weight: bold;
+        color: whitesmoke;
+      }
+    }
+
+    .sidebar {
+      flex: 1;
+      background-color: lightgray;
+      border-right: 4px solid whitesmoke;
+
+      .search {
+        border-bottom: 4px solid whitesmoke;
+
+        .searchInput {
+          input {
+            padding: 10px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+          }
+        }
+      }
+
+      .userChat {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        cursor: pointer;
+
+        .userChatInfo {
+          span {
+            font-weight: bold;
+          }
+
+          p {
+            font-size: small;
+            margin-bottom: 0;
+          }
+        }
+
+        &:hover {
+          background-color: darkgray;
+        }
+
+        img {
+          width: 32px;
+          border-radius: 50%;
+        }
+      }
+
+      .chatNavbar {
+        background-color: darkgray;
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+        padding: 10px;
+        color: whitesmoke;
+
+        .chatName {
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+        }
+
+        .user {
+          align-items: center;
+          display: flex;
+          gap: 10px;
+
+          button {
+            background-color: gray;
+            color: whitesmoke;
+            border: none;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
